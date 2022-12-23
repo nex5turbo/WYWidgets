@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircularTextButton: View {
+public struct CircularTextButton: View {
     var title: String = ""
     var action: () -> Void
     init(title: String = "", action: @escaping () -> Void) {
@@ -20,7 +20,7 @@ struct CircularTextButton: View {
     private var fontSize: CGFloat = 15
     
 
-    var body: some View {
+    public var body: some View {
         
         Button {
          
