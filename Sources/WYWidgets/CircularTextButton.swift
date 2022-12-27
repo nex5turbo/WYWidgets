@@ -59,30 +59,38 @@ public struct CircularTextButton: View {
 
 extension CircularTextButton {
     
+    /// Set background color of CircularTextButton.
+    /// - Parameter color: Color
+    /// - Returns: View
     public func setBackgroundColor(_ color: Color) -> Self {
         var newView = self
         newView.backgroundColor = color
         return newView
     }
     
-    public func fontSize(_ fontSize: CGFloat) -> Self {
-        var newView = self
-        newView.fontSize = fontSize
-        return newView
-    }
-    
+    /// Set text color of CircularTextButton.
+    /// - Parameter color: Color
+    /// - Returns: View
     public func tintColor(_ color: Color) -> Self {
         var newView = self
         newView.tintColor = color
         return newView
     }
     
+    /// Set text padding of CircularTextButton.
+    /// - Parameter value: CGFloat padding value
+    /// - Returns: View
     public func textPadding(_ value: CGFloat) -> Self {
         var newView = self
         newView.textPadding = value
         return newView
     }
-
+    
+    /// Set stroke to CircularTextButton.
+    /// - Parameters:
+    ///   - color: Color stroke color
+    ///   - lineWidth: CGFloat default = 1
+    /// - Returns: View
     public func stroke(_ color: Color, lineWidth: CGFloat = 1) -> Self {
         var newView = self
         newView.strokeColor = color
