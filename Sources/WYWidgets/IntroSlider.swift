@@ -12,7 +12,7 @@ public struct IntroSlider: View {
     @State private var selectedIndex: Int = 0
     public var items: [IntroSliderItem]
     
-    init(items: [IntroSliderItem]) {
+    public init(items: [IntroSliderItem]) {
         self.items = items
     }
     
@@ -106,4 +106,11 @@ public struct IntroSliderItem: Hashable {
     public var title: String
     /// Body content for IntroSlider.
     public var content: String
+
+    public init(background: UIImage? = nil, backgroundColor: Color, title: String, content: String) {
+        self.background = background
+        self.backgroundColor = backgroundColor
+        self.title = title
+        self.content = content
+    }
 }
