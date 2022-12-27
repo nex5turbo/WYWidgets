@@ -22,18 +22,24 @@ public struct TabCountBar: View {
     private var barColor: Color = .gray
     private var barSelectedColor: Color = .black
     private var animation: Animation = .default
+
+    private var prevText = "Prev"
+    private var nextText = "Next"
+    private var doneText = "Done"
+
     private var isEndOfTabs: Bool {
         selectedIndex == tabCount - 1
     }
     private var isStartOfTabs: Bool {
         selectedIndex == 0
     }
+
     public var body: some View {
         HStack {
             Button {
                 selectedIndex -= 1
             } label: {
-                Text("Prev")
+                Text(prevText)
             }
             .disabled(isStartOfTabs)
             
@@ -54,7 +60,7 @@ public struct TabCountBar: View {
                     selectedIndex += 1
                 }
             } label: {
-                Text(isEndOfTabs ? "Done" :"Next")
+                Text(isEndOfTabs ? doneText : nextText)
             }
         }
         .padding()
@@ -62,6 +68,24 @@ public struct TabCountBar: View {
 }
 
 extension TabCountBar {
+    public func nextButtonText(_ value: String) -> Self {
+        var newView = self
+        newView.nextText = value
+        return newView
+    }
+
+    public func prevButtonText(_ value: String) -> Self {
+        var newView = self
+        newView.prevText = value
+        return newView
+    }
+
+    public func doneButtonText(_ value: String) -> Self {
+        var newView = self
+        newView.doneText = value
+        return newView
+    }
+
     public func setItemSize(_ value: CGFloat?) -> Self {
         guard let value else { return self }
         var newView = self
