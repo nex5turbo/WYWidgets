@@ -21,7 +21,8 @@ var body: some View {
 ```
 ### Result
 
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 10 18 41](https://user-images.githubusercontent.com/50979183/209742681-bf90aecc-83b3-40fb-b389-2e544a97cdcb.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 10 18 41](https://user-images.githubusercontent.com/50979183/209742737-c8c9fb56-c64a-4fed-8aa4-a0f8d4ffff7d.png)
+
 
 ## IntroSlider
 
