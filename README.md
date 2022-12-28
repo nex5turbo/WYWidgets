@@ -14,7 +14,6 @@ var body: some View {
         // Do something here -> button tap action
     }
     .tintColor(.black) // font color
-    ~~.fontSize(15) // font size~~
     .setBackgroundColor(.white) // background color
     .stroke(.green, lineWidth: 2) // stroke
     .textPadding(3) // padding between text, circle inner line
