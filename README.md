@@ -14,11 +14,15 @@ var body: some View {
         // Do something here -> button tap action
     }
     .tintColor(.black) // font color
-    .setBackgroundColor(.white) // background color
-    .stroke(.green, lineWidth: 2) // stroke
-    .textPadding(3) // padding between text, circle inner line
+    .setBackgroundColor(.gray) // background color
+    .stroke(.black, lineWidth: 2) // stroke
+    .textPadding(10) // padding between text, circle inner line
 }
 ```
+### Result
+
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 10 18 41](https://user-images.githubusercontent.com/50979183/209742681-bf90aecc-83b3-40fb-b389-2e544a97cdcb.png)
+
 ## IntroSlider
 
 ## TabCountBar
