@@ -7,7 +7,7 @@
 - ~~Font size can be set.~~ Not yet.
 - Font color can be set.
 
-** Usage example **
+**Usage example**
 ```
 var body: some View {
     CircularTextButton("This is Button") {
