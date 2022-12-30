@@ -46,7 +46,7 @@ var body: some View {
 }
 ```
 ### Result
-![Simulator Screen Shot - iPhone 11 Pro - 2022-12-31 at 02 53 41](https://user-images.githubusercontent.com/50979183/210099120-ec84556c-323f-4dd2-b060-08ebab1b9038.png)
-![Simulator Screen Shot - iPhone 11 Pro - 2022-12-31 at 02 53 44](https://user-images.githubusercontent.com/50979183/210099126-4decdb83-5966-49f8-afef-d0474455d72a.png)
-![Simulator Screen Shot - iPhone 11 Pro - 2022-12-31 at 02 53 47](https://user-images.githubusercontent.com/50979183/210099129-d6461759-4373-447a-935a-642ad55fe585.png)
+![Simulator Screen Shot - iPhone 11 Pro - 2022-12-31 at 02 53 41](https://user-images.githubusercontent.com/50979183/210099120-ec84556c-323f-4dd2-b060-08ebab1b9038.png) {: width = "30%"}
+![Simulator Screen Shot - iPhone 11 Pro - 2022-12-31 at 02 53 44](https://user-images.githubusercontent.com/50979183/210099126-4decdb83-5966-49f8-afef-d0474455d72a.png) {: width = "30%"}
+![Simulator Screen Shot - iPhone 11 Pro - 2022-12-31 at 02 53 47](https://user-images.githubusercontent.com/50979183/210099129-d6461759-4373-447a-935a-642ad55fe585.png) {: width = "30%"}
 ## TabCountBar
