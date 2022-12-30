@@ -20,10 +20,7 @@ public struct IntroSlider: View {
     private var barColor: Color?
     private var barSelectedColor: Color?
     private var barAnimation: Animation?
-    private var titleSize: CGFloat = 30
-    private var contentSize: CGFloat = 15
-    private var titleColor: Color?
-    private var contentColor: Color?
+    private var buttonTintColor: Color?
     public var body: some View {
         ZStack {
             ForEach(items.indices, id: \.self) { index in
@@ -39,12 +36,21 @@ public struct IntroSlider: View {
                         }
                         VStack {
                             Text(item.title)
-                                .font(.system(size: titleSize, weight: .bold))
-                                .foregroundColor(titleColor)
+                                .font(.system(size: item.titleSize, weight: .bold))
+                                .foregroundColor(item.titleColor)
                             Spacer()
+                            if let contentImageName = item.contentImageName {
+                                if let image = UIImage(named: contentImageName) {
+                                    Image(uiImage: image)
+                                } else {
+#if DEBUG
+                                    Text("Image error")
+#endif
+                                }
+                            }
                             Text(item.content)
-                                .font(.system(size: contentSize, weight: .semibold))
-                                .foregroundColor(contentColor)
+                                .font(.system(size: item.contentSize, weight: .semibold))
+                                .foregroundColor(item.contentColor)
                             Spacer()
                         }
                         .padding()
@@ -63,30 +69,17 @@ public struct IntroSlider: View {
                 .setBarColor(barColor)
                 .setBarSelectedColor(barSelectedColor)
                 .barAnimation(barAnimation)
+                .setButtonTintColor(buttonTintColor)
             }
         }
     }
 }
 
 extension IntroSlider {
-    public func setTitleTextSize(_ value: CGFloat) -> Self {
+    public func setButtonTintColor(_ color: Color?) -> Self {
+        guard let color else { return self }
         var newView = self
-        newView.titleSize = value
-        return newView
-    }
-    public func setTitleTextColor(_ color: Color?) -> Self {
-        var newView = self
-        newView.titleColor = color
-        return newView
-    }
-    public func setContentTextSize(_ value: CGFloat) -> Self {
-        var newView = self
-        newView.contentSize = value
-        return newView
-    }
-    public func setContentTextColor(_ color: Color?) -> Self {
-        var newView = self
-        newView.contentColor = color
+        newView.buttonTintColor = color
         return newView
     }
 }
@@ -97,6 +90,11 @@ public struct IntroSliderItem: Hashable {
         hasher.combine(backgroundColor)
         hasher.combine(title)
         hasher.combine(content)
+        hasher.combine(titleSize)
+        hasher.combine(contentSize)
+        hasher.combine(titleColor)
+        hasher.combine(contentColor)
+        hasher.combine(contentImageName)
     }
     /// nullable. If background set, backgroundColor ignored in View.
     public var background: UIImage?
@@ -107,10 +105,45 @@ public struct IntroSliderItem: Hashable {
     /// Body content for IntroSlider.
     public var content: String
 
+    public var titleColor: Color = .black
+    public var contentColor: Color = .black
+    public var titleSize: CGFloat = 30
+    public var contentSize: CGFloat = 15
+    public var contentImageName: String? = nil
+
     public init(background: UIImage? = nil, backgroundColor: Color, title: String, content: String) {
         self.background = background
         self.backgroundColor = backgroundColor
         self.title = title
         self.content = content
+    }
+
+    public func setTitleColor(_ color: Color) -> Self {
+        var newItem = self
+        newItem.titleColor = color
+        return newItem
+    }
+
+    public func setContentColor(_ color: Color) -> Self {
+        var newItem = self
+        newItem.contentColor = color
+        return newItem
+    }
+
+    public func setTitleSize(_ size: CGFloat) -> Self {
+        var newItem = self
+        newItem.titleSize = size
+        return newItem
+    }
+
+    public func setContentSize(_ size: CGFloat) -> Self {
+        var newItem = self
+        newItem.contentSize = size
+        return newItem
+    }
+    public func setContentImage(name: String) -> Self {
+        var newItem = self
+        newItem.contentImageName = name
+        return newItem
     }
 }
