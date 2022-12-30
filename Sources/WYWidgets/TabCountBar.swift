@@ -22,6 +22,7 @@ public struct TabCountBar: View {
     private var barColor: Color = .gray
     private var barSelectedColor: Color = .black
     private var animation: Animation = .default
+    private var buttonTintColor: Color? = nil
 
     private var prevText = "Prev"
     private var nextText = "Next"
@@ -40,6 +41,7 @@ public struct TabCountBar: View {
                 selectedIndex -= 1
             } label: {
                 Text(prevText)
+                    .foregroundColor(buttonTintColor)
             }
             .disabled(isStartOfTabs)
             
@@ -61,6 +63,7 @@ public struct TabCountBar: View {
                 }
             } label: {
                 Text(isEndOfTabs ? doneText : nextText)
+                    .foregroundColor(buttonTintColor)
             }
         }
         .padding()
@@ -111,6 +114,13 @@ extension TabCountBar {
         guard let animation else { return self }
         var newView = self
         newView.animation = animation
+        return newView
+    }
+
+    public func setButtonTintColor(_ color: Color?) -> Self {
+        guard let color else { return self }
+        var newView = self
+        newView.buttonTintColor = color
         return newView
     }
 }
