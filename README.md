@@ -25,5 +25,22 @@ var body: some View {
 
 
 ## IntroSlider
-
+**Usage example**
+```
+@State var introSliderPresent = false
+var body: some View {
+    VStack {
+        // your view
+    }
+    .onAppear {
+        introSliderPresent = true
+    }
+    .fullScreenCover(isPresented: $introSliderPresent) {
+        IntroSlider(items: [
+            IntroSliderItem(backgroundColor: .yellow, title: "Hello World!", content: "This is Hello Yellow Page!"),
+            IntroSliderItem(backgroundColor: .yellow, title: "Hello World!", content: "This is Hello Yellow Page!"),
+            IntroSliderItem(backgroundColor: .yellow, title: "Hello World!", content: "This is Hello Yellow Page!")
+        ])
+    }
+}
 ## TabCountBar
