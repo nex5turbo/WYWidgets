@@ -21,7 +21,8 @@ var body: some View {
 ```
 ### Result
 
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 10 18 41](https://user-images.githubusercontent.com/50979183/209742737-c8c9fb56-c64a-4fed-8aa4-a0f8d4ffff7d.png)
+<img src="https://user-images.githubusercontent.com/50979183/209742737-c8c9fb56-c64a-4fed-8aa4-a0f8d4ffff7d.png" width="300" height="600"/>
+
 
 
 ## IntroSlider
@@ -46,6 +47,6 @@ var body: some View {
 }
 ```
 ### Result
-<img src="https://user-images.githubusercontent.com/50979183/210099120-ec84556c-323f-4dd2-b060-08ebab1b9038.png" width="200" height="400"/> <img src="https://user-images.githubusercontent.com/50979183/210099126-4decdb83-5966-49f8-afef-d0474455d72a.png" width="200" height="400"/> <img src="https://user-images.githubusercontent.com/50979183/210099129-d6461759-4373-447a-935a-642ad55fe585.png" width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/50979183/210099120-ec84556c-323f-4dd2-b060-08ebab1b9038.png" width="300" height="600"/> <img src="https://user-images.githubusercontent.com/50979183/210099126-4decdb83-5966-49f8-afef-d0474455d72a.png" width="300" height="600"/> <img src="https://user-images.githubusercontent.com/50979183/210099129-d6461759-4373-447a-935a-642ad55fe585.png" width="300" height="600"/>
 
 ## TabCountBar
