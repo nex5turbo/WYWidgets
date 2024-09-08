@@ -49,4 +49,40 @@ var body: some View {
 ### Result
 <img src="https://user-images.githubusercontent.com/50979183/210099120-ec84556c-323f-4dd2-b060-08ebab1b9038.png" width="300" height="600"/> <img src="https://user-images.githubusercontent.com/50979183/210099126-4decdb83-5966-49f8-afef-d0474455d72a.png" width="300" height="600"/> <img src="https://user-images.githubusercontent.com/50979183/210099129-d6461759-4373-447a-935a-642ad55fe585.png" width="300" height="600"/>
 
-## TabCountBar
+## SafeAreaPadding
+- For developers whose project's target iOS version < 17.0
+**Usage example**
+```
+ZStack {
+    Color.blue.ignoresSafeArea()
+    VStack {
+        Text("Hello World")
+        Spacer()
+    }
+    .safeAreaPadding()
+}
+```
+
+## RoundedTextButton
+- text: String main text string
+- caption: String caption text string
+- action: () -> Void button tap action
+- alignment: HorizontalAlignment -> default: .center text alignment in button
+- backgroundColor: Color -> default: .blue background color
+- fontColor: Color -> default: .white main text color
+- captionColor: Color -> default: .gray caption text color
+- scale: RoundedTextButtonScale -> default: .fit .fit, .fill(Bool) whether you want to fill button width to parent view or not
+- font: Font -> default: .headline main text font
+- captionFont: Font -> default: .caption caption text font
+- cornerRadius: CGFloat -> default: 10 button corner radius value
+**Usage example**
+```
+RoundedTextButton("Test Text", caption: "Hello world") { // caption removable
+    print("Button Tapped")
+}
+.scaleMode(.fit) // default: .fit
+```
+
+### Result
+![스크린샷 2024-09-09 오전 1 56 47](https://github.com/user-attachments/assets/b2a17a4e-e334-4c82-b056-c11712b2e44f)
+
