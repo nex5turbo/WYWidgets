@@ -147,10 +147,8 @@ extension RoundedTextButton {
 }
 
 #Preview {
-    RoundedTextButton("Test Text", caption: "Hello world") {
+    RoundedTextButton("Test Text", caption: "Hello world") { // caption removable
         print("Button Tapped")
     }
-    .scaleMode(.fit)
-    .radius(10)
-    .textAlignment(.center)
+    .scaleMode(.fit) // default: .fit
 }
