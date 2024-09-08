@@ -69,6 +69,14 @@ struct RoundedTextButton: View {
     
     @ViewBuilder func buttonLabelContent() -> some View {
         VStack(alignment: alignment) {
+            switch scale {
+            case .fit:
+                EmptyView()
+            case .fill(_):
+                HStack {
+                    Spacer()
+                }
+            }
             Text(text)
                 .font(font)
                 .foregroundColor(fontColor)
@@ -142,6 +150,7 @@ extension RoundedTextButton {
     RoundedTextButton("Test Text", caption: "Hello world") {
         print("Button Tapped")
     }
-    .scaleMode(.fill())
-    .radius(30)
+    .scaleMode(.fit)
+    .radius(10)
+    .textAlignment(.center)
 }
