@@ -75,6 +75,7 @@ ZStack {
 - font: Font -> default: .headline main text font
 - captionFont: Font -> default: .caption caption text font
 - cornerRadius: CGFloat -> default: 10 button corner radius value
+    
 **Usage example**
 ```
 RoundedTextButton("Test Text", caption: "Hello world") { // caption removable
